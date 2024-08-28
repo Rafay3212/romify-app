@@ -1,0 +1,158 @@
+/* Auth.css */
+
+/* General container that holds both left and right sections */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Left section - for logo, branding or information */
+.auth-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: #f7f8fa;
+}
+
+/* Right section - for the form */
+.auth-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #282c34;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Image inside left section */
+.auth-image {
+    max-width: 90%; /* Scale image within its container */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Logos or additional branding text inside left section */
+.auth-logos p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Main heading */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* General paragraph text */
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Input group wrapper for labels and inputs */
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Input labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Text inputs (including email and password) */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Google button styling */
+.google-btn {
+    display: block;
+    width: 100%;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Divider between form sections */
+.divider {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 14px;
+    color: #bbb;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Divider lines on either side */
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #bbb;
+}
+
+/* Text in the middle of the divider */
+.divider span {
+    background-color: #f7f8fa;
+    padding: 0 15px;
+}
+
+/* Primary authentication button */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Hover state for authentication button */
+.auth-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer text at the bottom */
+.auth-footer {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #777;
+}
+
+/* Error messages styling */
+.error {
+    color: red;
+    font-size: 12px;
+}
