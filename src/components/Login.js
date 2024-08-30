@@ -1,6 +1,8 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {InputGroup,InputGroupAddon,InputGroupText
+} from "reactstrap";
 import './Auth.css';
 import romify from '../romify.png'; // Importing the image
 
@@ -41,34 +43,73 @@ export default function Login() {
     };
 
     return (
+       
+
         <div className="auth-container">
             <div className="auth-left">
+                <h1 style={{color: '#D27419', marginBottom: '100px', marginRight: '1000px'}} >Romify</h1>
                 <h1>SignIn</h1>
-                <p>Get your hands on latest community builds with Romify</p>
-                <button className="google-btn">Login with Google</button>
-                <div className="divider"><span>or</span></div>
+                <p>Get your hands on latest community <br></br> builds with Romify</p>
+                <button className="google-btn" 
+                style={{
+                    borderRadius: '27px',
+                   // width: '43',
+                   // height:'45.77',
+                    Border: '1.14',
+                     padding: '8px 20px',  // Adjusts the button's size
+                      fontSize: '16x',     // Decreases the font size
+                         height: '40px',       // Sets a specific height
+                              width: 'auto'  // Adjust the value to change the roundness
+                  }}
+                >Login with Google</button>
+                <div className="divider"><span>------------------or------------------</span></div>
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="example@gmail.com" value={formData.email} onChange={handleChange} />
+                        <label htmlFor="email" style={{ textAlign: "left", display: "block" }}>Email</label>
+                        <InputGroup>
+                                                         <InputGroupAddon>
+                                                            <InputGroupText>
+                                                               <i className="icon-user"></i>
+                                                            </InputGroupText>
+                                                            </InputGroupAddon>
+                                                         
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" value={formData.email} onChange={handleChange}  style={{
+                                 borderRadius: '50px' // Adjust the value to change the roundness
+                                  }}/>
+                                  </InputGroup>
                         {errors.email && <p className="error">{errors.email}</p>}
                     </div>
                     <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" value={formData.password} onChange={handleChange} />
+                        <label htmlFor="password" style={{ textAlign: "left", display: "block" }}>Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" value={formData.password} onChange={handleChange} style={{
+                                 borderRadius: '50px' // Adjust the value to change the roundness
+                                  }}/>
                         {errors.password && <p className="error">{errors.password}</p>}
                     </div>
                     <div className="terms">
+                    <label htmlFor="terms" style={{ display: 'flex', alignItems: 'center' }}>
                         <input type="checkbox" id="terms" name="terms" checked={formData.terms} onChange={handleChange} />
-                        <label htmlFor="terms">I agree to all terms and conditions of Romify.</label>
+                        I agree to all terms and conditions of Romify.
+                        </label>
+                        {/* <label htmlFor="terms">I agree to all terms and conditions of Romify.</label> */}
                         {errors.terms && <p className="error">{errors.terms}</p>}
                     </div>
-                    <button type="submit" className="auth-btn">Login</button>
+                    <button 
+                     style={{
+                        borderRadius: '27px',
+                        padding: '8px 20px',  // Adjusts the button's size
+                          fontSize: '20px',     // Decreases the font size
+                             height: '40px',       // Sets a specific height
+                                 width: 'auto'  // Adjust the value to change the roundness
+                      }}
+                    type="submit" className="auth-btn">Login</button>
                 </form>
-                <p className="auth-footer">Don't have an account? <Link to="/signup">Sign up</Link></p>
+                <p className="auth-footer" style={{color: '#D27419', marginLeft:'40px'}}>Don't have an account? <Link to="/signup">Sign up</Link></p>
             </div>
-            <div className="auth-right">
-                <img src={romify} alt="Romify" className="auth-image" />
+            <div className="auth-right" 
+           
+            >
+                <img src={romify}  alt="Romify" className="portfolio_item-image" />
                 <div className="auth-info">
                     <h2>Enter the world of Custom ROMs</h2>
                     <div className="auth-logos">
@@ -78,5 +119,6 @@ export default function Login() {
                 </div>
             </div>
         </div>
+      
     );
 }

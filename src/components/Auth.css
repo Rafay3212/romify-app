@@ -76,6 +76,13 @@ label {
     color: #555;
 }
 
+.portfolio_item-image {
+    width: 960px;
+    height: 846px;
+    margin-top: 86px;
+    margin-bottom: 20px;
+   }
+
 /* Text inputs (including email and password) */
 input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
