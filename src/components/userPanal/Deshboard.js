@@ -6,14 +6,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Main from './Mainpage.png';
+
 function Deshboard() {
     return (
         <>
 
 
             <img
-                className="w-full h-[50vh] object-cover"
-                src="https://gnnhd.tv/media/96264/conversions/Best-camera-phones-in-Pakistan-1280x720.webp"
+                className="w-full h-[80vh] object-cover"
+                // src="https://gnnhd.tv/media/96264/conversions/Best-camera-phones-in-Pakistan-1280x720.webp"
+                src={Main}
                 alt="Banner Image"
             />
 
