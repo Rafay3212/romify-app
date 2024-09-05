@@ -58,7 +58,7 @@ function Devices() {
                         {selectedBrand ? (
                             <div className="flex flex-col items-start">
                                 <p className="text-5xl font-bold mb-4">{selectedBrand}</p>
-                                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3">
 
                                     <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
                                         <a href="#" className="flex-shrink-0">
@@ -66,7 +66,7 @@ function Devices() {
                                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
                                                 alt="Device Image" />
                                         </a>
-                                        <div className="p-4 flex flex-col justify-between">
+                                        <div className="p-4 flex flex-col   justify-between">
                                             <div>
                                                 <a href="#">
                                                     <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>

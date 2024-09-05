@@ -43,9 +43,9 @@ export default function Signup() {
     };
 
     return (
-        <div className="auth-container">
-            <div className="auth-left">
-            <h1 style={{color: '#D27419', marginBottom: '100px', marginRight: '1000px'}} >Romify</h1>
+        <div className="h-screen flex">
+        <div className="w-1/2 bg-white flex flex-col justify-center items-center p-8">
+        <h1 style={{color: '#D27419'}} >Romify</h1>
                 <h1>Create account</h1>
                 <p>Unleash your device's full potential with <br></br> our premium custom ROMs</p>
                 <button className="google-btn"
@@ -107,16 +107,14 @@ export default function Signup() {
                 </form>
                 <p className="auth-footer" style={{color: '#D27419'}}>Already have an account? <Link to="/login">Sign in</Link></p>
             </div>
-            <div className="auth-right">
-                <img src={romify} alt="Romify" className="portfolio_item-image" />
-                <div className="auth-info">
-                    <h2>Join the world of Custom ROMs</h2>
-                    <div className="auth-logos">
-                        <p>💯 Trusted ROM</p>
-                        <p>📞 Community Support</p>
-                    </div>
-                </div>
-            </div>
+            <div className="auth-right relative flex flex-col items-center justify-center h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${romify})` }}>
+    <h2 className="text-white text-3xl font-bold absolute top-4">Join the world of Custom ROMs</h2>
+    
+    <div className="auth-logos w-full flex justify-between absolute bottom-4 px-8">
+        <p className="text-white text-lg">💯 Trusted ROM</p>
+        <p className="text-white text-lg">📞 Community Support</p>
+    </div>
+</div>
         </div>
     );
 }
