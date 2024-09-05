@@ -106,6 +106,8 @@ export default function Login() {
                 </form>
                 <p className="auth-footer" style={{color: '#D27419', marginLeft:'40px'}}>Don't have an account? <Link to="/signup">Sign up</Link></p>
             </div>
+
+            
             <div className="auth-right" 
            
             >
