@@ -1,284 +1,147 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
+const mockDevices = [
+    {
+        brand: 'Google',
+        name: 'Pixel 6',
+        latestBuild: '2024/11/19',
+        versions: ['14', '14 (Plus Edition)', '13', '13 (Plus Edition)', '12', '11', '11 (Plus Edition)']
+    },
+    {
+        brand: 'Google',
+        name: 'Pixel 5',
+        latestBuild: '2024/11/18',
+        versions: ['14', '13', '12', '11']
+    },
+    // Add more mock devices here...
+];
+const brands = ['Google', 'Samsung', 'Xiaomi', 'Nokia', 'OnePlus', 'Lenovo', 'Asus', 'Nubia', 'Realme'];
+
+
+
+
 function Devices() {
-    const [selectedBrand, setSelectedBrand] = useState('Apple');
+    const [selectedBrand, setSelectedBrand] = useState('Google');
+    const filteredDevices = mockDevices.filter(device => device.brand === selectedBrand);
 
-    const brands = [
-        'Apple',
-        'Samsung',
-        'Google',
-        'OnePlus',
-        'Sony',
-        'Huawei',
-        'Xiaomi',
-        'Oppo',
-        'Motorola',
-        'Nokia',
-    ];
     return (
-        <>
-            <form class="max-w-md mx-auto mt-2">
-                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
-                <div class="relative flex items-center">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
-                    </div>
-                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " placeholder="Search Mobile..." required />
-                    <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 ">Search</button>
-                </div>
-            </form>
-            <div className="flex">
-                {/* Brand List */}
-                <div className="w-1/4 m-2 p-4 bg-white   ">
-                    <div className=' border border-gray-200 shadow'>
-                        <h2 className="text-2xl font-bold mb-4">Filter by Brand</h2>
-                        <ul className="space-y-2 ">
-                            {brands.map(brand => (
-                                <li key={brand}>
-                                    <button
-                                        onClick={() => setSelectedBrand(brand)}
-                                        className={`block py-2 px-4 w-full  text-xl text-left rounded hover:bg-gray-200 ${selectedBrand === brand ? 'bg-blue-100' : ''
-                                            }`}
-                                    >
-                                        {brand}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+        <div className="flex gap-5 max-md:flex-col">
+            <div className="flex flex-col w-full max-md:ml-0 max-md:w-full">
+                <div className="flex overflow-hidden flex-col mx-auto w-full bg-white  ">
 
-                {/* Selected Brand */}
-                <div className="w-3/4 p-4">
-                    {/* <h2 className="text-xl font-bold mb-4">Selected Brand</h2> */}
-                    <div className="text-xl font-bold mb-4">
-                        {selectedBrand ? (
-                            <div className="flex flex-col items-start">
-                                <p className="text-5xl font-bold mb-4">{selectedBrand}</p>
-                                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <main className="flex flex-col self-stretch px-4 w-full max-md:max-w-full">
 
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
-                                    <Link to='/devices/view'> <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col md:flex-row mb-4">
-                                        <a href="#" className="flex-shrink-0">
-                                            <img className="rounded-lg md:rounded-t-lg md:rounded-none md:rounded-l-lg w-full md:w-48 h-48 object-cover"
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s"
-                                                alt="Device Image" />
-                                        </a>
-                                        <div className="p-4 flex flex-col justify-between">
-                                            <div>
-                                                <a href="#">
-                                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                                </a>
-                                                <p className="mb-3 text-gray-700">Select a version:</p>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Plus</span>
-                                                    <span className="inline-block py-1 px-2 text-xs font-medium text-white rounded-lg" style={{ backgroundColor: 'rgb(190, 210, 255)' }}>14 Edition</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mt-4">
-                                                Read more
-                                                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div></Link>
 
-                                </div>
+                        <div className="flex overflow-hidden flex-col justify-center items-center px-16 py-20 w-full text-xl font-semibold bg-sky-100 shadow-[0px_0px_16px_rgba(125,153,180,1)] text-neutral-300 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                            <form className="flex flex-wrap gap-4 items-center py-2.5 pr-2.5 pl-4 max-w-full bg-white rounded-lg border border-black border-solid shadow-[2px_2px_24px_rgba(177,216,255,1)] w-[640px]">
+                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f52c3b105956664fc55bd51109c16b90fb2343137fe4e4a3e0256349b933e89c?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
+                                <label htmlFor="searchInput" className="sr-only">Search your Device</label>
+                                <input
+                                    type="search"
+                                    id="searchInput"
+                                    placeholder="Search your Device"
+                                    className="self-stretch my-auto flex-grow bg-transparent border-none outline-none"
+                                />
+                            </form>
+                        </div>
+                        <div className="self-center mt-16 mr-7 w-full max-w-[1352px] max-md:mt-10 max-md:mr-2.5 max-md:max-w-full">
+                            <div className="flex gap-5 max-md:flex-col">
+                                <aside className="flex flex-col w-[22%] max-md:ml-0 max-md:w-full">
+                                    <div className="flex flex-col px-11 py-8 rounded-lg border-2 border-gray-300 border-solid max-md:px-5 max-md:mt-10">
+                                        <h2 className="self-start text-xl font-semibold tracking-wide text-neutral-400">
+                                            Filter BY Brands
+                                        </h2>
+                                        <div className="flex flex-col mt-6 w-full text-2xl font-medium tracking-wide whitespace-nowrap text-neutral-600">
+                                            {brands.map((brand) => (
+                                                <button
+                                                    key={brand}
+                                                    onClick={() => setSelectedBrand(brand)}
+                                                    className={`gap-2.5 self-stretch px-6 py-2.5 mt-6 max-w-full rounded-xl min-h-[48px] w-[200px] max-md:px-5 ${selectedBrand === brand ? 'text-white bg-blue-500' : 'bg-gray-100'
+                                                        }`}
+                                                >
+                                                    {brand}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </aside>
+                                <div className="flex flex-col ml-5 w-[78%] max-md:ml-0 max-md:w-full">
+                                    <h1 className="self-start text-7xl font-semibold tracking-wider text-black max-md:text-4xl">
+                                        {filteredDevices[0]?.brand || 'Devices'}
+                                    </h1>
+                                    <div className="mt-6 max-md:mr-0.5 max-md:max-w-full">
+                                        <div className="flex flex-wrap gap-5">
+                                            {filteredDevices.map((device, index) => (
+                                                <div className="flex flex-col w-[calc(50%-10px)] max-md:w-full">
+                                                    <div className="flex overflow-hidden overflow-x-auto flex-col px-8 pt-6 pb-3.5 w-full leading-none rounded-xl border border-blue-500 border-solid shadow-sm max-md:px-5 max-md:mt-4 max-md:max-w-full">
+                                                        <Link to='/devices/view'>
+                                                            <div className="flex gap-7 items-center">
+                                                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/bf7c334c7b4701ebe06e00dc8b19a6ea2da2da7e50340fa6a7be9fa2f8a457b2?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 self-stretch my-auto aspect-[0.77] w-[69px]" />
+                                                                <div className="flex flex-col self-stretch my-auto min-h-[125px] min-w-[240px] w-[302px]">
+                                                                    <h3 className="flex-1 text-xl font-semibold tracking-wide text-black">{device.name}</h3>
+                                                                    <div className="flex flex-1 gap-1 items-center mt-3 text-sm font-semibold tracking-normal size-full text-neutral-500">
+                                                                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c95513adfa29722f522ec4f02dbb2beb02da7237d0f7765a11d471c10febda68?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 self-stretch my-auto w-2 aspect-[0.57]" />
+                                                                        <div className="self-stretch my-auto">
+                                                                            Latest Build: <span className="text-zinc-600">{device.latestBuild}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="flex flex-col mt-3 w-full max-w-[302px] min-h-[64px]">
+                                                                        <div className="flex flex-1 gap-1 items-center text-sm font-semibold tracking-normal whitespace-nowrap size-full text-neutral-500">
+                                                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/50585b1648c2b544884919c4e685591e7267c67f480e30389eb65835d21259cc?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 self-stretch my-auto w-4 aspect-square" />
+                                                                            <div className="self-stretch my-auto">Version(s):</div>
+                                                                        </div> <div className="flex flex-wrap gap-1 items-start mt-2 w-full text-xs tracking-normal text-sky-600">
+                                                                            {device.versions.map((version, index) => (
+                                                                                <span key={index} className="gap-2.5 self-stretch px-2 py-1 whitespace-nowrap bg-sky-100 rounded-2xl min-h-[18px]">
+                                                                                    {version}
+                                                                                </span>
+                                                                            ))}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div></div>
                             </div>
-                        ) : (
-                            <p className="text-gray-500">No brand selected</p>
-                        )}
-                    </div>
+                        </div>
+                    </main>
+                    <section className="flex overflow-hidden flex-col justify-center items-center px-16 py-14 mt-28 w-full font-semibold bg-gray-100 max-w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                        <div className="flex flex-wrap gap-5 justify-between w-full max-w-[1002px] max-md:max-w-full">
+                            <div className="flex flex-col items-start my-auto max-md:max-w-full">
+                                <h2 className="text-4xl font-bold tracking-wide leading-none text-black">Contribute</h2>
+                                <p className="self-stretch mt-8 text-base tracking-normal leading-none text-zinc-600 max-md:max-w-full">
+                                    Do you like our efforts? Show your support by donating
+                                </p>
+                                <button className="overflow-hidden gap-3.5 self-stretch px-9 py-3 mt-8 text-xl text-white bg-blue-500 rounded-2xl border border-black border-solid max-md:px-5">
+                                    Join Now
+                                </button> </div>
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/206ce75519109a539d8029f7bae9bd61bb00b080093b45d8ae673e25efc5af39?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="Contribution illustration" className="object-contain shrink-0 max-w-full aspect-[0.98] w-[221px]" />
+                        </div>
+                    </section>
+
+                    <main className="flex flex-col items-center max-w-full">
+
+                        <header className="flex flex-col items-center w-full text-center text-slate-900 max-md:max-w-full">
+                            <p className="text-sm uppercase text-neutral-700 tracking-[2.8px]">open source project</p>
+                            <h1 className="mt-5 text-5xl font-bold max-md:max-w-full max-md:text-4xl">Request More Information</h1>
+                            <p className="mt-5 w-full text-lg font-semibold leading-8 opacity-80 max-md:max-w-full">
+                                ROMIFY is a centerlized platform for best and latest Custom ROMs available for various devices
+                            </p>
+
+                        </header>
+                        <button className="flex justify-center overflow-hidden mx-auto   self-stretch px-6 py-4 mt-14 max-w-full text-xl font-semibold text-white bg-blue-500 border border-black border-solid min-h-[58px] rounded-[30px] w-[200px] max-md:px-5 max-md:mt-10">
+                            Join Now
+                        </button>
+                    </main>
+
                 </div>
             </div>
+        </div>
 
-        </>
     )
 }
 

@@ -15,26 +15,22 @@ import Request from './components/userPanal/Request';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        {/* <header className="App-header">
-          <Link to="/">
-            <img src={logo} className="App-logo" alt="logo" />
-          </Link>
-        </header> */}
-        <Routes>
-          <Route path="/" element={<Signup />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path='/deshboard' element={<Deshboard />} />
-          <Route path='/devices' element={<Devices />} />
-          <Route path='/unbrick' element={<Devices />} />
-          <Route path='/devices/view' element={<DeviceView />} />
-          <Route path='/news' element={<News />} />
-          <Route path='/request' element={<Request />} />
-        </Routes>
-        <Footer />
-      </div>
+
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path='/dashboard' element={<Deshboard />} />
+        <Route path='/devices' element={<Devices />} />
+        <Route path='/unbrick' element={<Devices />} />
+        <Route path='/devices/view' element={<DeviceView />} />
+        <Route path='/news' element={<News />} />
+        <Route path='/request' element={<Request />} />
+      </Routes>
+      <Footer />
+
     </Router>
   );
 }

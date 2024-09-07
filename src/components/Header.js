@@ -2,69 +2,39 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Header() {
+    const navItems = [
+        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/39605f61eb60b9b227c7385613416ec71655b85e38f9fb9920b57feaf43a615c?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Home", to: "/dashboard", active: true },
+        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/c3942a1c1043922378c4ed7c0876f3f6b7da4858951456a307ba12fbb0374888?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Devices", to: "/devices", },
+        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/498741480896b4e3c4611103a15c2245fe7fdf5aa44597faac99a8d8171b4585?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "News", to: "/news", },
+        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/9654fb32d0c9e14e30bf7f346a7a0bec04b5945b076fcf38ae0215a0b48e8872?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Request", to: "/request", },
+        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/80d859bf7b975074183a4ab8938790c0887957e604feb7e660441b9810fa9b15?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Unbrick", to: "/unbrick", },
+        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/3a4c9940ca27dcd54330f6a53b8d983902ecd0e3806805056f7d0a7239860aa3?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Support", to: "/dashboard", }
+    ];
     return (
 
 
-        <nav class="bg-white    border border-gray-200 shadow ">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap ">ROMIFY</span>
-                </a>
-                <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 " id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                        <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo" />
-                    </button>
+        <header className="flex overflow-hidden flex-col pt-4 mx-auto w-full bg-white max-md:mt-10 max-md:max-w-full">
+            <div className="flex flex-wrap gap-10 self-center max-w-full w-[1310px]">
+                <div className="grow shrink self-start mt-5 mb-3 text-2xl font-extrabold leading-none text-blue-500 w-[102px]">
+                    Romify
+                </div>
+                <nav className="flex flex-wrap gap-10 max-md:max-w-full">
+                    <div className="flex flex-wrap flex-auto gap-7 items-end text-base font-bold text-black whitespace-nowrap max-md:max-w-full">
+                        {navItems.map((item, index) => (
+                            <Link to={item.to}><div className={`flex relative gap-2.5 justify-center items-center p-2.5 ${item.active ? 'text-sky-600' : ''}`}>
+                                <img loading="lazy" src={item.icon} alt="" className="object-contain z-0 shrink-0 self-stretch my-auto w-5 aspect-[0.91]" />
+                                <div className="z-0 self-stretch my-auto">{item.text}</div>
+                                {/* <div className={`absolute bottom-1.5 z-0 shrink-0 self-start h-0 border-2 ${item.active ? 'border-sky-600' : 'border-black'} border-solid left-[15px] w-[72px]`} /> */}
+                            </div></Link>
 
-                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-                        <div class="px-4 py-3">
-                            <span class="block text-sm text-gray-900 ">Bonnie Green</span>
-                            <span class="block text-sm  text-gray-500 truncate ">name@flowbite.com</span>
-                        </div>
-                        <ul class="py-2" aria-labelledby="user-menu-button">
-                            <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Earnings</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Sign out</a>
-                            </li>
-                        </ul>
+                        ))}
                     </div>
-                    <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                        </svg>
+                    <button className="overflow-hidden gap-2.5 self-stretch px-6 py-2 my-auto text-sm font-semibold text-white bg-blue-500 rounded-2xl border border-black border-solid">
+                        Join Now
                     </button>
-                </div>
-                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-                    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white  ">
-                        <li>
-                            <Link to="/deshboard" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/devices" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Devices</Link>
-                        </li>
-                        <li>
-                            <Link to='/news' class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">News</Link>
-                        </li>
-                        <li>
-                            <Link to="/request" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Request</Link>
-                        </li>
-                        <li>
-                            <Link to='/unbrick' class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Unbrick</Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                </nav>
+            </div >
+        </header >
 
     )
 }

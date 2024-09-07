@@ -1,36 +1,42 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Footer() {
+    const navItems = [
+        { text: "Team", },
+        { text: "Case Studies", },
+        { text: "Publications", }
+    ];
     return (
 
-        <footer className="bg-white rounded-lg shadow">
-            <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-                <div className="sm:flex sm:items-center sm:justify-between">
-                    <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap">ROMIFY</span>
-                    </a>
-                    <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
-                        <li>
-                            <a href="#" className="hover:underline me-4 md:me-6">About</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:underline">Contact</a>
-                        </li>
-                    </ul>
+
+        <header className="flex overflow-hidden justify-end flex-col pt-9 pb-4 mx-auto w-full bg-white max-md:mt-10 max-md:max-w-full">
+            <div className="flex flex-wrap gap-10 self-center max-w-full w-[1310px]">
+                <div className="grow shrink self-start mt-5 text-2xl font-extrabold leading-none text-blue-500 w-[102px]">
+                    Romify
                 </div>
-                <hr className="my-6 border-gray-200 sm:mx-auto" />
-                <span className="block text-sm text-gray-500 sm:text-center">
-                    © 2023 <a href="https://flowbite.com/" className="hover:underline">ROMIFY™</a>. All Rights Reserved.
-                </span>
-            </div>
-        </footer>
+                <nav className="flex gap-10 items-start text-base mr-20 font-bold min-w-[240px] text-slate-900">
+                    <a href="#team">Team</a>
+                    <a href="#case-studies">Case Studies</a>
+                    <a href="#publications">Publications</a>
+                </nav>
+                <div className="flex gap-6 items-start">
+                    <a href="#" aria-label="Facebook">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fc5204d76ce4dbcb790950022bfaaf65ef8a185c8e00aa1759cb88c4fbd274a1?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 aspect-[1.05] w-[45px]" />
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/91553fed23bb3f5752c77d4caa50ce3124bd36ae2ac7817e86e0d55de5a81233?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 aspect-[1.05] w-[45px]" />
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8f4ec2f7cb0fec55d2b25ae9222b301f2e7b13a6131d51b2666dd831f4e3d3e?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 aspect-[1.05] w-[45px]" />
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/42dbe28878c1916217059a0e34c4e4eb79e29c1b1f21ef4c4d9d2f6b2f9fe03e?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 aspect-[1.05] w-[45px]" />
+                    </a>
+                </div></div >
+
+        </header >
+
     );
 }
 
