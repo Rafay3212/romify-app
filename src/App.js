@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import './App.css';
+
 import logo from './logo.svg';
 import Deshboard from './components/userPanal/Deshboard';
 import Footer from './components/Footer';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import Devices from './components/userPanal/Devices';
 import News from './components/userPanal/News';
 import DeviceView from './components/userPanal/DeviceView';

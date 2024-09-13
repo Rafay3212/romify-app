@@ -1,0 +1,42 @@
+.navigationItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    padding: 10px 14px 10px 10px;
+  }
+  
+  .active {
+    color: #1976d2;
+  }
+  
+  @media (max-width: 991px) {
+    .navigationItem {
+      white-space: initial;
+    }
+  }
+  
+  .underline {
+    position: absolute;
+    width: 69px;
+    height: 0;
+    left: 15px;
+    bottom: 5px;
+    border: 2px solid #000;
+  }
+  
+  .active .underline {
+    border-color: #1976d2;
+  }
+  
+  .icon {
+    aspect-ratio: 0.92;
+    object-fit: contain;
+    object-position: center;
+    width: 24px;
+  }
+  
+  .label {
+    z-index: 0;
+  }

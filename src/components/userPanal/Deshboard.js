@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../Header'
+import Header from '../Header/Header'
 import Footer from '../Footer'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -54,25 +54,19 @@ function Deshboard() {
                 >
                     <SwiperSlide>
                         <Link to='/devices/view'>
-                            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow mx-auto">
-                                <a href="#">
-                                    <div className="flex justify-center">
-                                        <img className="rounded-t-lg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0praxNFT7dTQYuQlpiE9nl6gbXzpnY0kSRg&s" alt="Device Image" />
-                                    </div>
-                                </a>
-                                <div className="p-5">
-                                    <a href="#">
-                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                                    </a>
-                                    <p className="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                                        Read more
-                                        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
+                        <div className="w-[360px] h-[358px] px-[84px] pt-6 pb-[71.51px] bg-gradient-to-br from-white to-white rounded-2xl shadow border border-[#1e8efc] backdrop-blur-2xl justify-center items-center inline-flex">
+  <div className="self-stretch flex-col justify-start items-center gap-6 inline-flex">
+    <img className="w-[110px] h-[142.49px]" src="https://via.placeholder.com/110x142" />
+    <div className="flex-col justify-start items-center gap-4 flex">
+      <div className="text-black text-xl font-bold font-['Raleway'] leading-snug tracking-tight">Samsung Galaxy S9</div>
+      <div className="w-[100px] h-6 px-4 py-2.5 bg-[#e5f2ff] rounded-2xl justify-center items-center gap-2.5 inline-flex">
+        <div className="text-[#1976d2] text-base font-bold font-['Raleway'] leading-[17.60px] tracking-tight">Starlte</div>
+      </div>
+      {/* <div>
+      <span style="text-[#797979] text-base font-semibold font-['Inter'] leading-[17.60px] tracking-tight">5,32,299 </span><span style="text-[#797979] text-base font-semibold font-['Raleway'] leading-[17.60px] tracking-tight">Downloads</span></div> */}
+    </div>
+  </div>
+</div>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
