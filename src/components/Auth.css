@@ -163,3 +163,8 @@ input[type="text"], input[type="email"], input[type="password"] {
     color: red;
     font-size: 12px;
 }
+
+.icon-active {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(91%) saturate(2882%) hue-rotate(175deg) brightness(102%) contrast(103%);
+    /* This filter will turn your icon blue */
+}

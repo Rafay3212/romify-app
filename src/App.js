@@ -12,6 +12,7 @@ import DeviceView from './components/userPanal/DeviceView';
 import Request from './components/userPanal/Request';
 import Header from './components/Header';
 import Installguide from './components/userPanal/Installguide';
+import StockROM from './components/userPanal/StockROM';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/news' element={<News />} />
         <Route path='/request' element={<Request />} />
         <Route path='/devices/view/installguide' element={<Installguide/>}/>
+        <Route path='/devices/view/StockROM' element={<StockROM />} /> {/* Add this line for StockROM */}
       </Routes>
       <Footer />
 

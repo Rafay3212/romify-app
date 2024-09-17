@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
-
 const mockDevices = [
+
+    
     {
         brand: 'Google',
         name: 'Pixel 6',
@@ -57,13 +58,12 @@ function DeviceView() {
                                     <div className="flex overflow-hidden flex-col px-5 py-7 w-full text-sm font-bold tracking-normal leading-none text-sky-600 rounded-2xl border-2 border-solid border-stone-300 shadow-[0px_0px_14px_rgba(0,0,0,0.4)] max-md:pl-5 max-md:mt-8 max-md:max-w-full">
                                         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/49fca48145caa2960eb657c24025b51990d25a15f3acc0d7607f15a8ed24fa6e?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="Device image" className="object-contain self-center max-w-full aspect-[0.77] w-[230px]" />
                                         <div className="flex gap-4 mt-8 w-full">
-                                            <button className="overflow-hidden gap-2.5 self-stretch px-4 py-1 text-white bg-blue-500 rounded-2xl border border-solid border-slate-400">
+                                            <button className="flex justify-center items-center overflow-hidden gap-2.5 self-stretch px-4 py-1 bg-sky-100 rounded-2xl text-center">
                                                 Custom ROMs
                                             </button>
                                             <Link to="/devices/view/installguide" className="flex justify-center items-center overflow-hidden gap-2.5 self-stretch px-4 py-1 bg-sky-100 rounded-2xl text-center">
                                                 Install Guide
                                             </Link>
-
 
                                             <Link
                                                 to="/devices/view/StockROM"
@@ -75,24 +75,13 @@ function DeviceView() {
                                                 >
                                                 Stock ROM
                                                 </Link>
-
-                                            {/* <Link to="/devices/view/StockROM" className="flex justify-center items-center overflow-hidden gap-2.5 self-stretch px-4 py-1 bg-sky-100 rounded-2xl text-center">
-                                                     Stock ROM       
-                                            </Link> */}
-
-
                                             {/* <button className="overflow-hidden gap-2.5 self-stretch px-4 py-1 bg-sky-100 rounded-2xl">
                                                 Stock ROM
                                             </button> */}
                                         </div>
                                     </div>
                                 </div>
-
-
                                 {/* <DeviceInfo /> */}
-
-
-
                                 <div className="flex flex-col ml-5 w-[67%] max-md:ml-0 max-md:w-full">
                                     <div className="flex flex-col w-full max-md:mt-8 max-md:max-w-full">
                                         <div className="flex flex-wrap gap-3 max-w-full font-bold w-[794px]">

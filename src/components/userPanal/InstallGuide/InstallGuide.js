@@ -1,8 +1,7 @@
-
 import React from 'react';
-import SpecList from './SpecList';
-import InstallationSteps from './InstallationSteps';
-import RequestInfo from './RequestInfo';
+import SpecList from '../SpecList';
+import InstallationSteps from '../InstallationSteps';
+import RequestInfo from '../RequestInfo';
 
 function InstallGuide() {
   const specs = [
@@ -42,10 +41,8 @@ Step 2: Enable Developer Options
 Step 3: Enable OEM Unlock
 1. In Developer Options, look for OEM Unlocking and enable it.
 2. Confirm any warning that appears.`,
-      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/c7c4c64631951dda8c7d680f04738deb5779123a176653b0ac650c7c8d723ede?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
+      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/af6df71c95343f6afd17c2aec8cf82cd8e6f6b83f5c6783d2de8eb474940fb62?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
     },
-
-
     {
       title: 'STEP 2: Download TWRP for Galaxy S9',
       content: `Next up, download the official TWRP TAR file [and not IMG] for your device from below:
@@ -54,71 +51,29 @@ Step 3: Enable OEM Unlock
 
 STEP 3: Download Odin
 • After that, you will have to get hold of Odin so as to flash the TWRP TAR file to your Galaxy S9/S9+ device. So download it and then extract it to any convenient location on your PC.`,
-      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/ff7ce5393c3b64e517c338c58e9febdb0e3ad873daac6cfb810041d89f913b85?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
+      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/bebd4cd8ab0b4454641f4d96a179f72a8e9666f9e6363d3a27057a47976eb495?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
     },
-
-
     {
       title: 'STEP 4: Boot Galaxy S9 Download Mode',
-      content: `1. To begin with, power off your device.\n` +
-               `2. Then press and hold Vol Down + Bixby + Power keys together for 15 seconds.\n\n`,
-      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/22953864e9fd684de0f1b3f167b23c4831916c5714cd44a8b24eff33e63959d1?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
+      content: `1. To begin with, power off your device.
+2. Then press and hold Vol Down + Bixby + Power keys together for 15 seconds.`,
+      warning: `Warning: Follow these Steps carefully
+1. Before clicking start click on top left option button from options uncheck auto reboot
 
-    },
-    {
-      content: `1. As soon as you see the Warning message on your device, release the pressed keys.\n` +
-                `2. Finally, press the Volume Up key once and your device will be booted to Download Mode.` 
-
-    },
-
-
-{
-
-  title: 'STEP 5: Flash TWRP on Galaxy S9',
-  content: `1. Double click on the Odin3_v3.14.4.exe file to launch the tool.`,
-
-  image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/21d01c4eb322cb4d362700115c3a92418f227c06cbe1d6ba6960a27b740ccee6?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
-
-},
-
-{
-      warning: `Follow these Steps carefully
-1. Before clicking start click on top left option button from options uncheck auto reboot`,
-
-image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/64c559bc819b889abb677de987adc0f3c030a2e6008dac1c7a60d1b3c995a3c4?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
-
-warning1:`Now click on start
+Now click on start
 After flashing done .
 click power button+volume down+bixby key
 when screen goes black release all keys and immediately click power+bixby+volume up
 if you failed to do it immediately you have to repeat all steps from step 4.`,
-
-
-},
-
-{
-warning:`Now click on start
-After flashing done .
-click power button+volume down+bixby key
-when screen goes black release all keys and immediately click power+bixby+volume up
-if you failed to do it immediately you have to repeat all steps from step 4.`,
-     
+      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/eb4449972e6f012e703aec7b801e4514a3d2756cc54c80fbbf6196ed3039a58a?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
     },
-
-
     {
       title: 'STEP 6: Initialize TWRP on Galaxy S9/S9+',
       content: `1. TWRP will ask if you want to allow system modifications, select "Keep /system RO".
-2. After that, go to Wipe and tap on Format Data.`,
-
-  image: `https://cdn.builder.io/api/v1/image/assets/TEMP/42ce679202d15c18caceb3adb27c4b922d2f8f251330c3d3d4b7f6ee3951e1bf?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8`,
-
-    },
-
-    {
-     content1: `1. Then type in YES in the space provided and hit Enter. Your device will undergo a format.
-2. Once done, go to Reboot and select Recovery. Your device will reboot to TWRP`,
-      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1be881ec3019af88dc10ea919a4d37cf7aa41537ba71f915a410ef4cb0fbf810?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
+2. After that, go to Wipe and tap on Format Data.
+3. Then type in YES in the space provided and hit Enter. Your device will undergo a format.
+4. Once done, go to Reboot and select Recovery. Your device will reboot to TWRP`,
+      image: 'https://cdn.builder.io/api/v1/image/assets/TEMP/7c3a9b3a5a6c78202f69f88c3aa221bcbfb5977bfaaeca2918356dd911cbcd88?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8',
     },
   ];
 
@@ -150,7 +105,7 @@ if you failed to do it immediately you have to repeat all steps from step 4.`,
             <div className="flex flex-col w-full text-base font-semibold tracking-tight max-md:mt-10">
               <img 
                 loading="lazy" 
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c202f318a7425bf079174e220414370a2703ba8e2e10cabcba3681905e17b4c?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8https://cdn.builder.io/api/v1/image/assets/TEMP/0c202f318a7425bf079174e220414370a2703ba8e2e10cabcba3681905e17b4c?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8" 
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c202f318a7425bf079174e220414370a2703ba8e2e10cabcba3681905e17b4c?placeholderIfAbsent=true&apiKey=cb1db43ffc26405789293b2cef5404b8" 
                 alt="Samsung Galaxy S9 (Korea)" 
                 className="object-contain self-center max-w-full aspect-[0.77] w-[295px]" 
               />
@@ -166,4 +121,3 @@ if you failed to do it immediately you have to repeat all steps from step 4.`,
 }
 
 export default InstallGuide;
-

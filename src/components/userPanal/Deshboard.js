@@ -203,6 +203,7 @@ function Deshboard() {
                             </div>
                         </section>
                     </main>
+
                     <main className="flex flex-col items-center max-w-full pt-7">
 
                         <header className="flex flex-col items-center w-full text-center text-slate-900 max-md:max-w-full">
@@ -213,7 +214,7 @@ function Deshboard() {
                             </p>
 
                         </header>
-                        <button className="flex justify-center overflow-hidden mx-auto   self-stretch px-6 py-4 mt-14 max-w-full text-xl font-semibold text-white bg-blue-500 border border-black border-solid min-h-[58px] rounded-[30px] w-[200px] max-md:px-5 max-md:mt-10">
+                        <button className="flex justify-center overflow-hidden mx-auto  self-stretch px-6 py-4 mt-14 max-w-full text-xl font-semibold text-white bg-blue-500 border border-black border-solid min-h-[58px] rounded-[30px] w-[200px] max-md:px-5 max-md:mt-10">
                             Join Now
                         </button>
                     </main>
