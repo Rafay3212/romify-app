@@ -178,34 +178,7 @@ function Devices() {
                 </div>
               </div>
             </div>
-          </main><section className="flex overflow-hidden flex-col justify-center items-center px-16 py-14 mt-28 w-full font-semibold bg-gray-100 max-w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
-                        <div className="flex flex-wrap gap-5 justify-between w-full max-w-[1002px] max-md:max-w-full">
-                            <div className="flex flex-col items-start my-auto max-md:max-w-full">
-                                <h2 className="text-4xl font-bold tracking-wide leading-none text-black">Contribute</h2>
-                                <p className="self-stretch mt-8 text-base tracking-normal leading-none text-zinc-600 max-md:max-w-full">
-                                    Do you like our efforts? Show your support by donating
-                                </p>
-                                <button className="overflow-hidden gap-3.5 self-stretch px-9 py-3 mt-8 text-xl text-white bg-blue-500 rounded-2xl border border-black border-solid max-md:px-5">
-                                    Join Now
-                                </button> </div>
-                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/206ce75519109a539d8029f7bae9bd61bb00b080093b45d8ae673e25efc5af39?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="Contribution illustration" className="object-contain shrink-0 max-w-full aspect-[0.98] w-[221px]" />
-                        </div>
-                    </section>
-
-                    <main className="flex flex-col items-center max-w-full pt-7">
-
-                        <header className="flex flex-col items-center w-full text-center text-slate-900 max-md:max-w-full">
-                            <p className="text-sm uppercase text-neutral-700 tracking-[2.8px]">open source project</p>
-                            <h1 className="mt-5 text-5xl font-bold max-md:max-w-full max-md:text-4xl">Request More Information</h1>
-                            <p className="mt-5 w-full text-lg font-semibold leading-8 opacity-80 max-md:max-w-full">
-                                ROMIFY is a centerlized platform for best and latest Custom ROMs available for various devices
-                            </p>
-
-                        </header>
-                        <button className="flex justify-center overflow-hidden mx-auto   self-stretch px-6 py-4 mt-14 max-w-full text-xl font-semibold text-white bg-blue-500 border border-black border-solid min-h-[58px] rounded-[30px] w-[200px] max-md:px-5 max-md:mt-10">
-                            Join Now
-                        </button>
-                    </main>
+          </main>
         </div>
       </div>
     </div>

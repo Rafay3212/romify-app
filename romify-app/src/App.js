@@ -12,7 +12,6 @@ import Installguide from './components/userPanal/Installguide';
 import StockROM from './components/userPanal/StockROM';
 import SupportPage from './components/userPanal/SupportPage';
 import Layout from './components/Layout';
-import About from './components/userPanal/About';
 
 function App() {
   return (
@@ -32,7 +31,6 @@ function App() {
             <Route path='/request' element={<Request />} />
             <Route path='/devices/view/installguide/:deviceId' element={<Installguide />} />
             <Route path='/support' element={<SupportPage />} />
-            <Route path='/about' element={<About />} />
             <Route path='/devices/view/StockROM/:deviceId' element={<StockROM />} />
           </Routes>
         </Layout>

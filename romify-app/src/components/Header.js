@@ -12,8 +12,7 @@ function Header() {
         { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/498741480896b4e3c4611103a15c2245fe7fdf5aa44597faac99a8d8171b4585?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "News", to: "/news" },
         { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/9654fb32d0c9e14e30bf7f346a7a0bec04b5945b076fcf38ae0215a0b48e8872?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Request", to: "/request" },
         { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/80d859bf7b975074183a4ab8938790c0887957e604feb7e660441b9810fa9b15?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Unbrick", to: "/unbrick" },
-        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/3a4c9940ca27dcd54330f6a53b8d983902ecd0e3806805056f7d0a7239860aa3?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Support", to: "/support" },
-        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/3a4c9940ca27dcd54330f6a53b8d983902ecd0e3806805056f7d0a7239860aa3?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "About", to: "/about" }
+        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/3a4c9940ca27dcd54330f6a53b8d983902ecd0e3806805056f7d0a7239860aa3?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5", text: "Support", to: "/support" }
     ];
 
     return (

@@ -1,0 +1,129 @@
+.header {
+    display: flex;
+    width: 100%;
+    max-width: 1310px;
+    gap: 40px 100px;
+    flex-wrap: wrap;
+    align-self: center;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+    }
+  }
+  
+  .logo {
+    color: rgba(30, 142, 252, 1);
+    flex-grow: 1;
+    width: 102px;
+    margin: auto 0;
+    font: 800 24px/1.1 Nosifer Caps, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 40px 46px;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 991px) {
+    .nav {
+      max-width: 100%;
+    }
+  }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(0, 0, 0, 1);
+    font: 700 16px Raleway, sans-serif;
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .navIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .joinButton {
+    border-radius: 16px;
+    background-color: rgba(30, 142, 252, 1);
+    color: rgba(255, 255, 255, 1);
+    padding: 8px 24px;
+    font: 600 14px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    border: 1px solid rgba(0, 0, 0, 1);
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .joinButton {
+      padding: 8px 20px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .deviceInfo {
+      width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .deviceImage {
+    width: 295px;
+    max-width: 100%;
+    aspect-ratio: 0.77;
+    object-fit: contain;
+    align-self: center;
+  }
+  
+  .deviceName {
+    color: rgba(138, 143, 149, 1);
+    letter-spacing: -0.4px;
+    align-self: center;
+    margin-top: 16px;
+    font: 20px Montserrat, sans-serif;
+  }
+  
+  .divider {
+    width: 100%;
+    max-width: 350px;
+    height: 1px;
+    margin: 15px 0;
+    border: none;
+    background-color: rgba(226, 225, 225, 1);
+  }
+  
+  .releaseInfo {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+  }
+  
+  .specificationTitle {
+    color: rgba(0, 0, 0, 1);
+    font-family: Montserrat, sans-serif;
+    align-self: center;
+    margin: 12px 0;
+  }
+  
+  .specItem {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+  }
+  
+  .specLabel {
+    color: rgba(0, 0, 0, 1);
+    font-family: Montserrat, sans-serif;
+  }
+  
+  .specValue {
+    color: rgba(184, 176, 176, 1);
+    font-family: Raleway, sans-serif;
+    text-align: right;
+  }

@@ -11,33 +11,6 @@ import 'swiper/css/navigation';
 import axios from 'axios';
 
 function Deshboard() {
-    const cardData = [
-        {
-            title: "Open Source",
-            content: "Source Code of all Custom Roms are available on Github.",
-            className: "w-[307px] pb-32 max-md:px-5 max-md:pb-24"
-        },
-        {
-            title: "Battery Life",
-            content: "Optimizations done at source code level to keep the OS battery-friendly",
-            className: "flex-1 shrink self-stretch px-17 pb-24 my-auto basis-0 min-w-[240px] max-md:px-5"
-        },
-        {
-            title: "Devices",
-            content: "Available for a wide range of devices with support from developers in forums.",
-            className: "flex-1 shrink self-stretch px-12 py-20 my-auto basis-0 min-w-[307px] max-md:px-5"
-        },
-        {
-            title: "Security patch",
-            content: "Romify has best collection of latest community Roms with latest security patches giving older devices a new life",
-            className: "flex-1 shrink self-stretch px-12 py-14 my-auto basis-7 min-w-[240px] max-md:px-5"
-        },
-        {
-            title: "E-waste",
-            content: "Romify recommend stable smoother and more modern operating system. This helps reduce e-waste by giving these devices a new lease on life.",
-            className: "w-[307px] px-8 py-16 max-md:px-5"
-        }
-    ];  
     const location = useLocation(); // Access the state passed from Login
 
     useEffect(() => {
@@ -125,7 +98,7 @@ function Deshboard() {
     </form>
 </div>
 
-                        <section className="flex flex-col items-start pl-16 mt-14 pb-5 w-full max-md:pl-5 max-md:mt-10 max-md:max-w-full">
+                        <section className="flex flex-col items-start pl-16 mt-14 w-full max-md:pl-5 max-md:mt-10 max-md:max-w-full">
                             <h2 className="text-4xl font-bold tracking-wide text-black">Latest Devices</h2>
 
                             <div className="mt-14 max-md:mt-10 w-full">
@@ -172,63 +145,6 @@ function Deshboard() {
                                 </Swiper>
                             </div>
                         </section>
-                        <section className="flex overflow-hidden flex-col justify-center items-center px-16 py-20 mt-12 w-full bg-neutral-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-                        <div className="max-w-full w-[1084px]">
-                            <div className="flex gap-5 max-md:flex-col">
-                                <div className="flex flex-col w-[37%] max-md:ml-0 max-md:w-full">
-                                    <div className="flex flex-col items-start self-stretch my-auto w-full font-semibold text-white max-md:mt-10">
-                                        <h2 className="text-3xl font-bold">Security</h2>
-                                        <p className="mt-4 text-xl w-[280px]">
-                                            Get latest Security patches with new updates, we enhance existing privacy touchpoints around the OS and keep you informed of how the system shares your data.
-                                        </p>
-                                        <div className="flex gap-5 self-stretch mt-9 text-base">
-                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/593673b7e332a2d5bcdf8941a41c6f60634d3a91d44e9c72c7697b862ea63625?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="" className="object-contain shrink-0 self-start w-12 aspect-square" />
-                                            <p className="flex-auto w-[270px]">
-                                                Trust helps you understand the state of your device's security and warns you about possible threats.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="flex flex-col ml-5 w-[63%] max-md:ml-0 max-md:w-full">
-                                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/124bc376e986aac995b7ac4d64a6626d5572fc6aa28216b7aeb2f86563d12f5c?placeholderIfAbsent=true&apiKey=f0392588affe43b6a23cab71c5f124c5" alt="Security illustration" className="object-contain w-full aspect-square max-md:mt-10 max-md:max-w-full" />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                        <main className="flex justify-center items-center min-h-screen p-4 bg-gray-100 ">
-                        <section className="flex overflow-hidden flex-col items-center text-white max-w-[992px]">
-                            <div className={`flex overflow-hidden flex-col px-14 py-14 bg-sky-600 rounded-2xl border-solid shadow-sm border-[3px] border-zinc-100 ${cardData[0].className}`}>
-                                <h2 className="text-3xl font-bold tracking-wide leading-none">{cardData[0].title}</h2>
-                                <p className="mt-10 text-xl font-semibold tracking-wide leading-6 text-center">{cardData[0].content}</p>
-                            </div>
-                            <div className="flex flex-wrap gap-7 items-center self-stretch mt-7 w-full max-md:max-w-full">
-                                {cardData.slice(1, 4).map((card, index) => (
-                                    <div className={`flex overflow-hidden flex-col px-14 py-14 bg-sky-600 rounded-2xl border-solid shadow-sm border-[3px] border-zinc-100 ${card.className}`}>
-                                        <h2 className="text-3xl font-bold tracking-wide leading-none">{card.title}</h2>
-                                        <p className="mt-10 text-xl font-semibold tracking-wide leading-6 text-center">{card.content}</p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className={`flex overflow-hidden flex-col px-14 py-14 bg-sky-600 rounded-2xl border-solid shadow-sm border-[3px] border-zinc-100 ${cardData[4].className}`}>
-                                <h2 className="text-3xl font-bold tracking-wide leading-none">{cardData[4].title}</h2>
-                                <p className="mt-10 text-xl font-semibold tracking-wide leading-6 text-center">{cardData[4].content}</p>
-                            </div>
-                        </section>
-                    </main>
-                    <main className="flex flex-col items-center max-w-full pt-7">
-
-                        <header className="flex flex-col items-center w-full text-center text-slate-900 max-md:max-w-full">
-                            <p className="text-sm uppercase text-neutral-700 tracking-[2.8px]">open source project</p>
-                            <h1 className="mt-5 text-5xl font-bold max-md:max-w-full max-md:text-4xl">Request More Information</h1>
-                            <p className="mt-5 w-full text-lg font-semibold leading-8 opacity-80 max-md:max-w-full">
-                                ROMIFY is a centerlized platform for best and latest Custom ROMs available for various devices
-                            </p>
-
-                        </header>
-                        <button className="flex justify-center overflow-hidden mx-auto   self-stretch px-6 py-4 mt-14 max-w-full text-xl font-semibold text-white bg-blue-500 border border-black border-solid min-h-[58px] rounded-[30px] w-[200px] max-md:px-5 max-md:mt-10">
-                            Join Now
-                        </button>
-                    </main>
                     </div>
                 </div>
             </div>

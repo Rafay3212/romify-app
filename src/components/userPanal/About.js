@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Devices() {
-  const [selectedBrand, setSelectedBrand] = useState("Select any brand");
+function About() {
+  const [selectedBrand, setSelectedBrand] = useState("About Romify");
   const [selectedBrandid, setSelectedBrandid] = useState();
   const [brands, setBrands] = useState([]);
   const [devices, setDevices] = useState([]);
@@ -109,7 +109,7 @@ function Devices() {
 </div>
             <div className="self-center mt-16 mr-7 w-full max-w-[1352px] max-md:mt-10 max-md:mr-2.5 max-md:max-w-full">
               <div className="flex gap-5 max-md:flex-col">
-                <aside className="flex flex-col w-[22%] max-md:ml-0 max-md:w-full">
+                {/* <aside className="flex flex-col w-[22%] max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col px-11 py-8 rounded-lg border-2 border-gray-300 border-solid max-md:px-5 max-md:mt-10">
                     <h2 className="self-start text-xl font-semibold tracking-wide text-neutral-400">
                       Filter BY Brands
@@ -121,12 +121,12 @@ function Devices() {
                           onClick={() => brandseting(brand.brandid, brand.brand_name)} // Set the selected brand
                           className={`gap-2.5 self-stretch px-6 py-2.5 mt-6 max-w-full rounded-xl min-h-[48px] w-[200px] max-md:px-5 ${selectedBrand === brand.brand_name ? 'text-white bg-blue-500' : 'bg-gray-100'}`}
                         >
-                          {brand.brand_name} {/* Display the brand_name */}
+                          {brand.brand_name} 
                         </button>
                       ))}
                     </div>
                   </div>
-                </aside>
+                </aside> */}
                 <div className="flex flex-col ml-5 w-[78%] max-md:ml-0 max-md:w-full">
                   <h1 className="self-start text-7xl font-semibold tracking-wider text-black max-md:text-4xl">
                     {selectedBrand}
@@ -171,7 +171,16 @@ function Devices() {
                           </div>
                         </div>
                       )) : (
-                        <p>No devices found for the selected brand.</p>
+                        <p className='text-lg text-neutral-500'>Romify is a web-based application designed to streamline the process of finding, downloading, and installing custom ROMs and recoveries for Android devices. It addresses the fragmented and often error-prone approach that many users face when attempting to optimize their devices beyond stock firmware capabilities. It also brings all the important Custom ROMs in the same site so users can locate them instead of scouring obscure sources for their needs.
+
+                        By providing a centralized platform with comprehensive help, and an intuitive, minimalistic user interface, Romify aims to enhance user experience, improve device performance, extend battery life, and ensure timely updates. The project is essential for users looking to remove bloatware, revive older devices, enhance privacy, and personalize their smartphones, ultimately bridging the digital divide and making modern technology more accessible and affordable. In other words, it will be users’ go-to hub for their Custom ROM needs.
+                        <br/><br/><br/>
+                        
+                        
+                        Romify is a web-based application designed to streamline the process of finding, downloading, and installing custom ROMs and recoveries for Android devices. It addresses the fragmented and often error-prone approach that many users face when attempting to optimize their devices beyond stock firmware capabilities. It also brings all the important Custom ROMs in the same site so users can locate them instead of scouring obscure sources for their needs.
+                        <br/><br/><br/>
+                        By providing a centralized platform with comprehensive help, and an intuitive, minimalistic user interface, Romify aims to enhance user experience, improve device performance, extend battery life, and ensure timely updates. The project is essential for users looking to remove bloatware, revive older devices, enhance privacy, and personalize their smartphones, ultimately bridging the digital divide and making modern technology more accessible and affordable. In other words, it will be users’ go-to hub for their Custom ROM needs.
+                        .</p>
                       )}
                     </div>
                   </div>
@@ -212,4 +221,4 @@ function Devices() {
   );
 }
 
-export default Devices;
+export default About;

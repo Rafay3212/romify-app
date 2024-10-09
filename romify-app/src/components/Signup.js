@@ -58,9 +58,9 @@ export default function Signup() {
     return (
         <div className="flex overflow-hidden flex-col pt-9 pb-24 pl-16 bg-white max-md:pl-5">
             <ToastContainer />
-            <div className="grow shrink self-start mt-5 mb-3 text-2xl font-extrabold leading-none text-blue-500 w-[102px]">
-                    Romify
-                </div>
+            <div className="self-start text-2xl font-medium tracking-wider text-amber-600">
+                Romify
+            </div>
             <div className="self-end mt-5 w-full max-w-[1278px] max-md:max-w-full">
                 <div className="flex gap-5 max-md:flex-col">
                     <div className="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
